@@ -1,12 +1,48 @@
 import React from "react";
-import { View, Text, ImageBackground, Image } from "react-native";
+import { View, Text, Image, ImageBackground, TextInput } from "react-native";
+import CardSocial from "../../components/CardSocial";
+import styles from "./styles";
+import Button from "../../components/Button";
+
 
 export default function Perfil() {
   return (
-    <View>
-      <ImageBackground source={require("../../assets/fundo.png")}>
+    <View style={styles.container}>
+      <ImageBackground
+        source={require("../../assets/fundo.png")}
+        style={styles.container}
+      >
         <Image source={require("../../assets/fotoperfil.png")} />
         <Text>Irys Salvatico</Text>
+        <CardSocial>
+          <>
+            
+            <TextInput placeholder="“Meus pensamentos são estrelas que eu não consigo arrumar em constelações” -A culpa é das estrelas," />
+          </>
+        </CardSocial>
+        <CardSocial>
+          <>
+          
+            <TextInput placeholder="Livro favorito: É assim que acaba" />
+          </>
+        </CardSocial>
+        <CardSocial>
+          <>
+            
+            <TextInput placeholder="Autora Favorita: Colleen Hoover" />
+          </>
+        </CardSocial>
+        <Button
+          title="Salvar"
+          type="purple"
+          onPress={() => console.log("Salvar")}
+        />
+        <Button
+          title="Alterar Senha"
+          type="purple"
+          onPress={() => console.log("Alterar Senha")}
+        />
+        <Button title="Sair" type="purple" onPress={() => console.log("Sair")} />
       </ImageBackground>
     </View>
   );
