@@ -13,7 +13,7 @@ export default function Perfil() {
         style={styles.container}
       >
         <Image source={require("../../assets/fotoperfil.png")} />
-        <Text>Irys Salvatico</Text>
+        <Text style={styles.title}>Irys Salvatico</Text>
         <CardSocial>
           <>
             
