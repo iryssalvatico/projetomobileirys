@@ -21,6 +21,9 @@ const styles = StyleSheet.create({
   },
   input: {
     fontSize: 20
+  },
+  inputdiv: {
+      width: 300
   }
 })
 

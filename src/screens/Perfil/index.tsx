@@ -17,19 +17,19 @@ export default function Perfil() {
         <CardSocial>
           <>
             
-            <TextInput placeholder="“Meus pensamentos são estrelas que eu não consigo arrumar em constelações” -A culpa é das estrelas," />
+            <TextInput placeholder="Texto genérico..." style={styles.inputdiv}/>
           </>
         </CardSocial>
         <CardSocial>
           <>
           
-            <TextInput placeholder="Livro favorito: É assim que acaba" />
+            <TextInput placeholder="Livro favorito:" style={styles.inputdiv}/>
           </>
         </CardSocial>
         <CardSocial>
           <>
             
-            <TextInput placeholder="Autora Favorita: Colleen Hoover" />
+            <TextInput placeholder="Autora Favorita:" style={styles.inputdiv}/>
           </>
         </CardSocial>
         <Button
