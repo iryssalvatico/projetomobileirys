@@ -1,7 +1,7 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { ChatScreen, PerfilScreen } from "../screens";
-import { Ionicons } from "@expo/vector-icons";
+import { ChatScreen, PerfilScreen, MapScreen } from "../screens";
+import { Ionicons, Feather } from "@expo/vector-icons";
 import colors from "../styles/colors";
 
 const Tab = createBottomTabNavigator();
@@ -35,6 +35,15 @@ export default function TabNavigation() {
           ),
         }}
       />
+      <Tab.Screen
+        name="Mapa"
+        component={MapScreen}
+        options={{
+          tabBarIcon: () => (
+            <Feather name="map-pin" size={24} color="white" />
+        ),
+        }}
+ />
     </Tab.Navigator>
   );
 }

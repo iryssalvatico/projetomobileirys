@@ -3,9 +3,10 @@ import { View, Text, Image, ImageBackground, TextInput } from "react-native";
 import CardSocial from "../../components/CardSocial";
 import styles from "./styles";
 import Button from "../../components/Button";
+import {LoginTypes} from "../../types/Screen.types"
 
 
-export default function Perfil() {
+export default function Perfil({navigation}: LoginTypes) {
   return (
     <View style={styles.container}>
       <ImageBackground
@@ -43,6 +44,7 @@ export default function Perfil() {
           onPress={() => console.log("Alterar Senha")}
         />
         <Button title="Sair" type="purple" onPress={() => console.log("Sair")} />
+        
       </ImageBackground>
     </View>
   );
