@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   View,
   Text,
@@ -7,9 +7,13 @@ import {
   ImageBackground,
 } from "react-native";
 import { MaterialIcons, Entypo, Ionicons } from "@expo/vector-icons";
-import Button from "../../components/Button";
+import { ButtonComp, LoadingComp } from "../../components";
 import styles from "./styles";
+import { useAuth } from "../../hook/auth";
+import { IRegister } from "../../interfaces/User.interface";
 import { LoginTypes } from "../../types/Screen.types";
+import { AxiosError } from "axios";
+import { IResponse } from "../../interfaces/Response.interface";
 
 export default function Cadastrar({ navigation }: LoginTypes) {
   async function handleSignIn() {
@@ -49,8 +53,8 @@ export default function Cadastrar({ navigation }: LoginTypes) {
               autoCapitalize="none"
             />
           </View>
-          <Button title="Salvar" type="purple" onPress={handleSignIn} />
-          <Button title="Voltar" type="green" onPress={handleLogin} />
+          <ButtonComp title="Salvar" type="purple" onPress={handleSignIn} />
+          <ButtonComp title="Voltar" type="green" onPress={handleLogin} />
         </KeyboardAvoidingView>
       </ImageBackground>
     </View>

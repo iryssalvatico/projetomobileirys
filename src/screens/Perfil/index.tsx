@@ -6,6 +6,7 @@ import Button from "../../components/Button";
 import {LoginTypes} from "../../types/Screen.types"
 
 
+
 export default function Perfil({navigation}: LoginTypes) {
   return (
     <View style={styles.container}>
