@@ -24,7 +24,15 @@ const styles = StyleSheet.create({
   },
   inputdiv: {
       width: 300
-  }
+  },
+  link: {
+    fontSize: 20,
+    },
+    img: {
+    width: 80,
+    height: 80,
+    borderRadius: 40,
+    },
 })
 
 export default styles;
