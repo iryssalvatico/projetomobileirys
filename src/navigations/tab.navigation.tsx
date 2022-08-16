@@ -1,7 +1,7 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { ChatScreen, PerfilScreen, MapScreen, SairScreen, QrCodeScreen } from "../screens";
-import { Ionicons, Feather,  MaterialCommunityIcons } from "@expo/vector-icons";
+import { ChatScreen, PerfilScreen, MapScreen, SairScreen, QrCodeScreen, ArquivoScreen, CameraScreen } from "../screens";
+import { Ionicons, Feather, AntDesign,  MaterialCommunityIcons } from "@expo/vector-icons";
 import colors from "../styles/colors";
 
 const Tab = createBottomTabNavigator();
@@ -41,31 +41,61 @@ export default function TabNavigation() {
         options={{
           tabBarIcon: () => (
             <Feather name="map-pin" size={24} color="white" />
-        ),
+          ),
         }}
       />
-       <Tab.Screen
-                name="Sair"
-                component={SairScreen}
-                options={{
-                  tabBarIcon: () => (
-                        <Ionicons name="exit" size={24} color={colors.white} />
-                    ),
-                }}
+
+      <Tab.Screen
+        name="QrCode"
+        component={QrCodeScreen}
+        options={{
+          tabBarIcon: () => (
+            <MaterialCommunityIcons
+              name="qrcode-scan"
+              size={24}
+              color={colors.white}
             />
-       <Tab.Screen
-                name="QrCode"
-                component={QrCodeScreen}
-                options={{
-                  tabBarIcon: () => (
-                        <MaterialCommunityIcons
-                            name="qrcode-scan"
-                            size={24}
-                            color={colors.white}
-                        />
-                    ),
-                }}
+          ),
+        }}
+      />
+
+      <Tab.Screen
+        name="Camera"
+        component={CameraScreen}
+        options={{
+          TabBarIcon: () => (
+            <Feather
+              name="camera"
+              size={24}
+              color={colors.white} />
+          ),
+        }}
+      />
+
+      <Tab.Screen
+        name="Arquivos"
+        component={ArquivoScreen}
+        options={{
+          TabBarIcon: () => (
+            <AntDesign
+              name="addfile"
+              size={24}
+              color={colors.white}
             />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Sair"
+        component={SairScreen}
+        options={{
+          tabBarIcon: () => (
+            <Ionicons name="exit" size={24} color={colors.white} />
+          ),
+        }}
+      />
     </Tab.Navigator>
+
   );
 }
+
