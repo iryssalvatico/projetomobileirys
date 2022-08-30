@@ -44,7 +44,6 @@ const styles = StyleSheet.create({
   buttonImage: {
     margin: 10,
   },
-  //copiados da screen camera
   buttonTop: {
     flex: 1,
     backgroundColor: "transparent",
@@ -71,7 +70,7 @@ const styles = StyleSheet.create({
   },
   viewTakePicture: {
     position: "absolute",
-    buttom: 0,
+    bottom: 0,
     flexDirection: "row",
     flex: 1,
     width: "100%",
@@ -86,7 +85,7 @@ const styles = StyleSheet.create({
   buttonTakePicture: {
     width: 70,
     height: 70,
-    buttom: 0,
+    bottom: 0,
     borderRadius: 50,
     backgroundColor: colors.white,
   },

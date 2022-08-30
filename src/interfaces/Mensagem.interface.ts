@@ -1,8 +1,8 @@
 export interface IMensagem {
-    titulo?: string, 
+    titulo?:string,
     mensagem?: string,
     topico?: number[],
-    imagem?: {
+    imagem?:{
         uri?: string
         base64?: string | any
     }
@@ -10,36 +10,37 @@ export interface IMensagem {
 }
 
 export interface IMensagemResponse{
-    status:string,
+    status: string,
     message: string,
-    data: {
+    data:{
         id: number
         titulo: string
         mensagem: string
         imagem: string
         created_at: Date
-        topicos: {
-            id: number
-            topico: string
+        topicos:{
+            id:number
+            topico:string
         }[]
-        user: {
+        user:{
             id: number
             name: string
         }
     }[]
 }
 
-export interface IMensagemState {
+export interface IMensagemState{
     id: number
     titulo: string
-    mensagem: string 
+    mensagem: string
+    imagem: string
     created_at: Date
-    topicos: {
-        id: number
+    topicos:{
+        id:number
         topico: string
     }[]
-    user: {
-        id: number
-        name: string
+    user:{
+        id:number
+        name:string
     }
 }

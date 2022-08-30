@@ -1,7 +1,7 @@
 export interface ITopico{
     status: string,
     message: string,
-    data: {
+    data:{
         id: number,
         topico: string
     }[]
@@ -13,6 +13,6 @@ export interface ITopicoServer{
 }
 
 export interface ITopicoState{
-    id: number,
-    name: string
+    id:number,
+    name:string
 }

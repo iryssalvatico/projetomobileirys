@@ -1,9 +1,9 @@
 import api from "../../api";
-import {ITopico} from "../../../interfaces/Topico.interface";
+import {ITopico} from "../../../interfaces/Topico.interface"
 
-class TopicoData {
+class TopicoData{
     index(){
-        return api.get <ITopico> ('/topico')
+        return api.get<ITopico>('/topico')
     }
 }
 
