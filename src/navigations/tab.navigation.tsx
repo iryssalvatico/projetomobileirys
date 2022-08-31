@@ -1,8 +1,9 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { ChatScreen, PerfilScreen, MapScreen, SairScreen, QrCodeScreen, ArquivoScreen, CameraScreen } from "../screens";
+import { ChatScreen, PerfilScreen, MapScreen, SairScreen, QrCodeScreen, ArquivoScreen, CameraScreen, EnviarMensagemScreen } from "../screens";
 import { Ionicons, Feather, AntDesign,  MaterialCommunityIcons } from "@expo/vector-icons";
 import colors from "../styles/colors";
+import ChatNavigation from "./chat.navigation";
 
 const Tab = createBottomTabNavigator();
 
@@ -63,7 +64,7 @@ export default function TabNavigation() {
         name="Camera"
         component={CameraScreen}
         options={{
-          TabBarIcon: () => (
+          tabBarIcon: () => (
             <Feather
               name="camera"
               size={24}
@@ -76,7 +77,7 @@ export default function TabNavigation() {
         name="Arquivos"
         component={ArquivoScreen}
         options={{
-          TabBarIcon: () => (
+          tabBarIcon: () => (
             <AntDesign
               name="addfile"
               size={24}
@@ -87,7 +88,7 @@ export default function TabNavigation() {
       />
       <Tab.Screen
         name="Chat"
-        component={ChatScreen}
+        component={ChatNavigation}
         options={{
           tabBarIcon: () => (
             <Ionicons name="chatbubbles" size={24} color={colors.white} />

@@ -4,7 +4,6 @@ import {
     Text,
     TextInput,
     KeyboardAvoidingView,
-    ImageBackground,
     Image,
     Alert,
     TouchableOpacity,
@@ -114,10 +113,7 @@ export default function EnviarMensagem({ navigation }: ChatTypes) {
             {isLoading ? (
                 <LoadingComp />
             ) : (
-                <ImageBackground
-                    source={require("../../assets/fundo.png")}
-                    style={styles.container}
-                >
+                <View style={styles.container}>
                     {startOver ? (
                         <KeyboardAvoidingView style={styles.containerForm}>
                             <TextInput
@@ -166,7 +162,7 @@ export default function EnviarMensagem({ navigation }: ChatTypes) {
                             </View>
                             <ButtonComp
                                 title="Salvar"
-                                    type="purple"
+                                type="green"
                                 onPress={handleSubmit}
                             />
                             <ButtonComp
@@ -217,7 +213,7 @@ export default function EnviarMensagem({ navigation }: ChatTypes) {
                             </View>
                         </Camera>
                     )}
-                </ImageBackground>
+                </View>
                 
             )}
         </>
