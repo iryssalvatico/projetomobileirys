@@ -1,13 +1,40 @@
-import React from "react";
+import React, {useEffect, useRef, useState} from "react";
 import { View, Text, Image, ImageBackground, TextInput } from "react-native";
 import CardSocial from "../../components/CardSocial";
 import styles from "./styles";
 import Button from "../../components/Button";
 import {LoginTypes} from "../../types/Screen.types"
+import { FontAwesome5 } from "@expo/vector-icons";
+import { ButtonComp, CardSocialComp, LoadingComp } from "../../components";
+import { useAuth } from "../../hook/auth";
+import * as Notifications from 'expo-notifications';
+import {registerForPushNotificationsAsync} from "../../services/data/Push";
 
-
+Notifications.setNotificationHandler({
+  handleNotification: async () => ({
+    shouldShowAlert: true,
+    shouldPlaySound: false,
+    shouldSetBadge: false,
+  })
+});
 
 export default function Perfil({navigation}: LoginTypes) {
+  const { user } = useAuth();
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    if (user && user.profile_photo_url) {
+      setIsLoading(false);
+    }
+  }, [user]);
+
+  useEffect(() => {
+    async function fetchToken() {
+      const token = await registerForPushNotificationsAsync()
+      console.log(token)
+    }
+    fetchToken()
+  }, []);
   return (
     <View style={styles.container}>
       <ImageBackground
