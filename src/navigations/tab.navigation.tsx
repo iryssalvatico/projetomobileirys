@@ -1,7 +1,7 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { ChatScreen, PerfilScreen, MapScreen, SairScreen, QrCodeScreen, ArquivoScreen, CameraScreen, EnviarMensagemScreen, VideoAudioScreen, AcelerometroScreen } from "../screens";
-import { Ionicons, Feather, AntDesign,  MaterialCommunityIcons, FontAwesome } from "@expo/vector-icons";
+import { ChatScreen, PerfilScreen, MapScreen, SairScreen, QrCodeScreen, ArquivoScreen, CameraScreen, EnviarMensagemScreen, VideoAudioScreen, AcelerometroScreen, PedometroScreen } from "../screens";
+import { Ionicons, Feather, AntDesign,  MaterialCommunityIcons, FontAwesome, Foundation } from "@expo/vector-icons";
 import colors from "../styles/colors";
 import ChatNavigation from "./chat.navigation";
 
@@ -122,6 +122,16 @@ export default function TabNavigation() {
           ),
         }}
       />
+      <Tab.Screen
+        name="Pedometro"
+        component={PedometroScreen}
+        options={{
+          tabBarIcon: () => (
+            <Foundation name="foot" size={24} color={colors.white} />
+          ),
+        }}
+      />
+
     </Tab.Navigator>
 
   );
