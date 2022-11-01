@@ -1,6 +1,6 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { ChatScreen, PerfilScreen, MapScreen, SairScreen, QrCodeScreen, ArquivoScreen, CameraScreen, EnviarMensagemScreen, VideoAudioScreen, AcelerometroScreen, PedometroScreen } from "../screens";
+import { ChatScreen, PerfilScreen, MapScreen, SairScreen, QrCodeScreen, ArquivoScreen, CameraScreen, EnviarMensagemScreen, VideoAudioScreen, AcelerometroScreen, PedometroScreen, MagnetoScreen, GiroscopioScreen } from "../screens";
 import { Ionicons, Feather, AntDesign,  MaterialCommunityIcons, FontAwesome, Foundation } from "@expo/vector-icons";
 import colors from "../styles/colors";
 import ChatNavigation from "./chat.navigation";
@@ -95,15 +95,7 @@ export default function TabNavigation() {
           ),
         }}
       />
-      <Tab.Screen
-        name="Sair"
-        component={SairScreen}
-        options={{
-          tabBarIcon: () => (
-            <Ionicons name="exit" size={24} color={colors.white} />
-          ),
-        }}
-      />
+      
       <Tab.Screen
         name="AudioVideo"
         component={VideoAudioScreen}
@@ -131,7 +123,34 @@ export default function TabNavigation() {
           ),
         }}
       />
+       <Tab.Screen
+        name="Magneto"
+        component={MagnetoScreen}
+        options={{
+          tabBarIcon: () => (
+            <FontAwesome name="magnet" size={24} color={colors.white} />
+          ),
+        }}
+      />
+          <Tab.Screen
+        name="Giroscopio"
+        component={GiroscopioScreen}
+        options={{
+          tabBarIcon: () => (
+            <FontAwesome name= "balance-scale" size={24} color={colors.white} />
+          ),
+        }}
+      />
 
+<Tab.Screen
+        name="Sair"
+        component={SairScreen}
+        options={{
+          tabBarIcon: () => (
+            <Ionicons name="exit" size={24} color={colors.white} />
+          ),
+        }}
+      />
     </Tab.Navigator>
 
   );
